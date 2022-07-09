@@ -1,6 +1,8 @@
 package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.OrderItem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,6 +22,8 @@ public class JpaMain {
         tx.begin();
 
         try{
+            Order order = new Order();
+            order.addOrderItem(new OrderItem()); // 양방향 관계 추가.
 
             // 쓰기지연 sql 저장소에 모든 sql 실행
             tx.commit(); // 트랜섹션 요청 실행
