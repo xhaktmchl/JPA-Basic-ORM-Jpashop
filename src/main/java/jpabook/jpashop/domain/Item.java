@@ -3,6 +3,8 @@ package jpabook.jpashop.domain;
 import org.hibernate.annotations.common.util.impl.Log;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Item {
@@ -15,6 +17,9 @@ public class Item {
     private String name;
     private int price;
     private int stockQuantity; // 남은 재고
+
+    @ManyToMany(mappedBy = "items")
+    private List<Category> categories = new ArrayList<>();
 
     /*
     getter setter 단축키: alt+ins 변수 선택

@@ -33,6 +33,10 @@ public class Order {
     @Enumerated(EnumType.STRING) // enum타입 관계 어노테이션, Strig 으로 해야 순서 트러블 없음
     private OrderStatus status;
 
+    @OneToOne
+    @JoinColumn(name = "DELIVERY_ID") // Order가 연관관계의 주인
+    private Delivery delivery;
+
     /*연관관계 편의 메소드*/
     public void addOrderItem(OrderItem orderItem){
         this.getOrderItems().add(orderItem); // Order.orders에 orderItem 넣어주고
