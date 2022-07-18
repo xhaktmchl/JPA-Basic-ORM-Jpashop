@@ -18,12 +18,12 @@ public class Category extends BaseEntity{
     private Category parent;
 
     @OneToMany(mappedBy = "parent") // 카테고리 1개 -> 자식 카테고리 여러개
-    private List<Category> child;
+    private List<Category> child = new ArrayList<>();
 
     /* 다대다*/
     @ManyToMany
     @JoinTable(name = "CATEGORY_ITEM",
-            joinColumns = @JoinColumn(name = "CAATEGORY_ID"),
+            joinColumns = @JoinColumn(name = "CATEGORY_ID"),
             inverseJoinColumns = @JoinColumn(name = "ITEM_ID")
     )
     private List<Item> items = new ArrayList<>();
