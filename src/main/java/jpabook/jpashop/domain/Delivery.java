@@ -3,7 +3,7 @@ package jpabook.jpashop.domain;
 import javax.persistence.*;
 
 @Entity
-public class Delivery {
+public class Delivery extends BaseEntity{
 
     @Column(name="DELIVERY_ID")
     @Id @GeneratedValue(strategy = GenerationType.AUTO)

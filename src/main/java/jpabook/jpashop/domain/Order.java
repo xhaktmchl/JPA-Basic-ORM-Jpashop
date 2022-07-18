@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "ORDERS") // DB 테이블 명 직접 설정
-public class Order {
+public class Order extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

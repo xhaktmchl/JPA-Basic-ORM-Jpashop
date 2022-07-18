@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) // 싱글 테이블 상속전력
 @DiscriminatorColumn(name = "DTYPE") // 각 상속받는 클래스를 구분하는 타입 자동생성
-public abstract class Item { // 상속 하는 클래스로 abstract 적용
+public abstract class Item extends BaseEntity{ // 상속 하는 클래스로 abstract 적용
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
