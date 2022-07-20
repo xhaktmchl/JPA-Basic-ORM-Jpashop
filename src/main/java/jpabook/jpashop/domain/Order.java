@@ -20,7 +20,7 @@ public class Order extends BaseEntity{
 //    @Column(name = "MEMBER_ID")
 //    private Long memberId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
@@ -33,7 +33,7 @@ public class Order extends BaseEntity{
     @Enumerated(EnumType.STRING) // enum타입 관계 어노테이션, Strig 으로 해야 순서 트러블 없음
     private OrderStatus status;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DELIVERY_ID") // Order가 연관관계의 주인
     private Delivery delivery;
 
